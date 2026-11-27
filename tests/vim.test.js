@@ -220,6 +220,15 @@ for (const L of LESSONS) {
   });
 }
 
+test('rename practice accepts a selective substitution but not a blanket one', () => {
+  const s = new Session(LESSONS.find((l) => l.id === 'rename-calls'));
+  for (const k of parseKeys(':%s/warn/alert/g<CR>')) s.feed(k);
+  assert.match(s.vim.text(), /example: alert\(\)/);
+  assert.equal(s.done, false);
+  for (const k of parseKeys('u:2s/warn/alert/<CR>:4,5s/warn/alert/<CR>')) s.feed(k);
+  assert.equal(s.done, true);
+});
+
 test('lesson ids are unique', () => {
   const ids = LESSONS.map((l) => l.id);
   assert.equal(new Set(ids).size, ids.length);

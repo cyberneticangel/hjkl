@@ -1,8 +1,8 @@
 # hjkl
 
-Learn vim by doing: 26 short exercises inside a terminal-styled page, driven by a small vim emulator written from scratch.
+Learn vim by doing: 29 short exercises inside a terminal-styled page, driven by a small vim emulator written from scratch. After the 26 guided exercises, **Editing in practice** adds three optional edits you can solve with your own choice of commands.
 
-![hjkl welcome screen with keyboard shortcuts to start or browse the 26 Vim exercises](docs/hjkl.png)
+![hjkl welcome screen with keyboard shortcuts to start or browse lessons](docs/hjkl.png)
 
 ## Run
 

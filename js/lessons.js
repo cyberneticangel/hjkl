@@ -9,7 +9,7 @@
 (function (root) {
   'use strict';
 
-  const CHAPTERS = ['survival', 'moving faster', 'operators', 'precision', 'search & replace', 'visual mode', 'final challenge'];
+  const CHAPTERS = ['survival', 'moving faster', 'operators', 'precision', 'search & replace', 'visual mode', 'final challenge', 'editing in practice'];
   const NO_ARROWS = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
   const NO_HL = ['h', 'l', ...NO_ARROWS];
 
@@ -469,6 +469,36 @@
       ].join('\n'),
       hint: '`r` fixes single characters. `G` jumps to the last line, and `ciw` changes a word.',
       solution: 'jf-r+4j0f+r*Gfaciwmultiply<Esc>',
+    },
+
+    // ---------------- chapter 8: editing in practice ----------------
+    {
+      id: 'quoted-value', chapter: 7, title: 'fix a quoted value',
+      body: ['This config still points to staging. Choose your own commands to prepare it for release.'],
+      goal: 'Change `staging` to `production`. Keep the quotes and the region setting.',
+      buffer: 'deploy({ env: "staging", region: "west" });',
+      expected: 'deploy({ env: "production", region: "west" });',
+      hint: '`ci"` changes the contents of the next pair of quotes.',
+      solution: 'ci"production<Esc>',
+    },
+    {
+      id: 'reorder-init', chapter: 7, title: 'reorder initialization',
+      body: ['The server reads its port before the config has loaded.'],
+      goal: 'Move `loadConfig();` just above the line that reads the port.',
+      buffer: 'initLogs();\nconst port = config.port;\nloadConfig();\nlisten(port);',
+      cursor: [2, 0],
+      expected: 'initLogs();\nloadConfig();\nconst port = config.port;\nlisten(port);',
+      hint: 'Delete the current line with `dd`. Move to the port assignment and put the line above it with `P`.',
+      solution: 'ddkP',
+    },
+    {
+      id: 'rename-calls', chapter: 7, title: 'update selected call sites',
+      body: ['The warning handler is now called alert. The usage example still describes the old API.'],
+      goal: 'Rename the three `warn()` calls to `alert()`. Keep the quoted example exactly as written.',
+      buffer: 'function notify() {\n  warn();\n  show("example: warn()");\n  warn();\n  warn();\n}',
+      expected: 'function notify() {\n  alert();\n  show("example: warn()");\n  alert();\n  alert();\n}',
+      hint: 'Search for `warn`, change the first word, then use `n` to visit each match. Press `.` only on calls.',
+      solution: '/warn<CR>ciwalert<Esc>nn.n.',
     },
   ];
 

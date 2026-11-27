@@ -252,7 +252,8 @@
     if (showHint && !s.done) html += `<p class="hint"><span class="tag">HINT</span>${md(L.hint)}</p>`;
     if (s.done) {
       const parNote = s.par ? (s.keys <= s.par ? ' (par or better!)' : ` (par ${s.par})`) : '';
-      const nextNote = idx < LESSONS.length - 1 ? 'for the next lesson' : 'to finish';
+      const nextNote = L.id === 'final' ? 'to start optional editing practice'
+        : idx < LESSONS.length - 1 ? 'for the next lesson' : 'to finish';
       html += `<p class="done">✓ solved in ${s.keys} keystroke${s.keys === 1 ? '' : 's'}${parNote}. Press <kbd>Enter</kbd> ${nextNote}.</p>`;
     }
     html += '</div>';
