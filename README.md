@@ -2,6 +2,8 @@
 
 Learn vim by doing: 26 short exercises inside a terminal-styled page, driven by a small vim emulator written from scratch.
 
+![hjkl welcome screen with keyboard shortcuts to start or browse the 26 Vim exercises](docs/hjkl.png)
+
 ## Run
 
 No build step and no dependencies. Open `index.html` in a browser, or serve the folder:
