@@ -1,0 +1,10 @@
+{
+  "name": "hjkl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Learn vim through hands-on exercises in a browser terminal.",
+  "scripts": {
+    "test": "node --test tests/",
+    "start": "python3 -m http.server 8000"
+  }
+}

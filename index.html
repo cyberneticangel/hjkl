@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hjkl — learn vim</title>
+  <meta name="description" content="Learn vim by doing: bite-sized exercises in a terminal, right in your browser.">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="window" id="window">
+    <header class="titlebar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="title"><span class="title-path">~/learn/vim</span><span class="title-sep"> — </span>hjkl</span>
+      <nav class="actions">
+        <button type="button" id="btn-lessons" title=":lessons">lessons</button>
+        <button type="button" id="btn-hint" title=":hint">hint</button>
+        <button type="button" id="btn-reset" title=":reset">reset</button>
+      </nav>
+    </header>
+    <section class="screen" id="screen" tabindex="0" aria-label="vim terminal"></section>
+    <footer class="footer" id="footer"></footer>
+  </main>
+  <noscript><p class="noscript">hjkl needs JavaScript to run the vim emulator.</p></noscript>
+  <script src="js/vim.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/runner.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
