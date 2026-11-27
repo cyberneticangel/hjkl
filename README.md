@@ -6,6 +6,8 @@ Learn vim by doing: 29 short exercises inside a terminal-styled page, driven by 
 
 ## Run
 
+Use the **Theme** picker in the title bar to switch between Classic, Tokyo Night, Catppuccin Mocha, and Catppuccin Latte (light). Your browser remembers the palette separately from lesson progress. Press `Esc` to return focus to the lesson.
+
 No build step and no dependencies. Open `index.html` in a browser, or serve the folder:
 
 ```sh

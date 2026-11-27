@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>hjkl — learn vim</title>
   <meta name="description" content="Learn vim by doing: bite-sized exercises in a terminal, right in your browser.">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
+  <script src="js/theme.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +15,14 @@
       <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="title"><span class="title-path">~/learn/vim</span><span class="title-sep"> — </span>hjkl</span>
       <nav class="actions">
+        <label class="theme-picker">Theme
+          <select id="theme">
+            <option value="classic">Classic</option>
+            <option value="tokyo-night">Tokyo Night</option>
+            <option value="catppuccin-mocha">Catppuccin Mocha</option>
+            <option value="catppuccin-latte">Catppuccin Latte</option>
+          </select>
+        </label>
         <button type="button" id="btn-lessons" title=":lessons">lessons</button>
         <button type="button" id="btn-hint" title=":hint">hint</button>
         <button type="button" id="btn-reset" title=":reset">reset</button>

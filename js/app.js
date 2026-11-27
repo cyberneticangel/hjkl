@@ -122,6 +122,7 @@
   }
 
   window.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLSelectElement) return;
     if (e.isComposing && e.key !== 'Dead') return;
     const onButton = e.target instanceof HTMLElement && e.target.closest('button');
     if (onButton && (e.key === 'Enter' || e.key === ' ')) return;
